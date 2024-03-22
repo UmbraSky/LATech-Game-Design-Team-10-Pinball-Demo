@@ -2516,12 +2516,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1022432491}
-  - component: {fileID: 1022432490}
-  - component: {fileID: 1022432489}
   - component: {fileID: 1022432488}
   - component: {fileID: 1022432487}
   - component: {fileID: 1022432486}
-  - component: {fileID: 1022432493}
   - component: {fileID: 1022432492}
   m_Layer: 0
   m_Name: Ball Shooter
@@ -2602,30 +2599,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &1022432489
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1022432485}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ca002da428252441b92f28d83c8a65f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1022432490
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1022432485}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8233d90336aea43098adf6dbabd606a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1022432491
 Transform:
   m_ObjectHideFlags: 0
@@ -2654,7 +2627,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Actions: {fileID: -944628639613478452, guid: a231a92ab950cf740a35e82b2b8f93f0, type: 3}
-  m_NotificationBehavior: 2
+  m_NotificationBehavior: 3
   m_DeviceLostEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -2694,18 +2667,6 @@ MonoBehaviour:
   m_DefaultActionMap: Ball Shooter
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &1022432493
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1022432485}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75bfb44564baef844b0e8ed84c131f3e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1034246794
 GameObject:
   m_ObjectHideFlags: 0
@@ -4418,8 +4379,57 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 478052277927654642, guid: 1e0a8d2e0adfadf47b67a171a6d6fd6c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1721304111}
   m_SourcePrefab: {fileID: 100100000, guid: 1e0a8d2e0adfadf47b67a171a6d6fd6c, type: 3}
+--- !u!1 &1721304110 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 478052277927654642, guid: 1e0a8d2e0adfadf47b67a171a6d6fd6c, type: 3}
+  m_PrefabInstance: {fileID: 1721304109}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1721304111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1721304110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: a231a92ab950cf740a35e82b2b8f93f0, type: 3}
+  m_NotificationBehavior: 2
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 22ac8569-085b-4dc0-bc10-06b84ed0f2e8
+    m_ActionName: Ball Shooter/New action[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b328685c-edb5-4f25-8769-768c2c5f1bee
+    m_ActionName: Flipper Left/New action[/Keyboard/leftArrow,/Keyboard/a,/Keyboard/leftCtrl,/Keyboard/leftShift]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 007862f2-cdaa-4dc7-86af-7b42c3f9d40b
+    m_ActionName: Flipper Right/New action[/Keyboard/d,/Keyboard/rightArrow,/Keyboard/rightShift,/Keyboard/rightCtrl]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Flipper Right
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &1724364990
 GameObject:
   m_ObjectHideFlags: 0

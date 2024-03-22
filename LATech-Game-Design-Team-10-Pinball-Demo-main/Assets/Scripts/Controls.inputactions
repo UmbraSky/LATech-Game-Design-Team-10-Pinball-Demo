@@ -2,13 +2,31 @@
     "name": "Controls",
     "maps": [
         {
-            "name": "Ball Shooter",
-            "id": "094122fd-3813-497b-b051-60899faa3bd7",
+            "name": "Testing",
+            "id": "b5bd8497-692e-4a6b-83a6-a0f0c3b19881",
             "actions": [
                 {
-                    "name": "New action",
+                    "name": "Flipper Right",
                     "type": "Button",
-                    "id": "22ac8569-085b-4dc0-bc10-06b84ed0f2e8",
+                    "id": "9b5759ed-db76-4698-80e2-9cbb3a9fe6ea",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Flipper Left",
+                    "type": "Button",
+                    "id": "2b85cece-9b7a-42ca-a133-51fe0ef890e9",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Ball Shooter",
+                    "type": "Button",
+                    "id": "ddc3a473-6617-4189-a101-f8c57883ddb1",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "Hold",
@@ -18,134 +36,100 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "a7b8647d-d88a-469f-900c-0c0d8a635d83",
-                    "path": "<Keyboard>/space",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "New action",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                }
-            ]
-        },
-        {
-            "name": "Flipper Left",
-            "id": "4dae93f3-c130-4360-b546-bce753120288",
-            "actions": [
-                {
-                    "name": "New action",
-                    "type": "Button",
-                    "id": "b328685c-edb5-4f25-8769-768c2c5f1bee",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                }
-            ],
-            "bindings": [
-                {
-                    "name": "",
-                    "id": "aa09b0c0-314f-4073-b386-96d482b0fa73",
-                    "path": "<Keyboard>/leftArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "New action",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "be7594f7-6739-487a-9745-efce8cbacce9",
-                    "path": "<Keyboard>/a",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "New action",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "cea84e2a-b243-420b-8a16-a28e20607211",
-                    "path": "<Keyboard>/leftCtrl",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "New action",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "42c7852d-62a2-4790-9be0-003b7f6a1992",
-                    "path": "<Keyboard>/leftShift",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "New action",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                }
-            ]
-        },
-        {
-            "name": "Flipper Right",
-            "id": "10342ee2-fe4c-4a02-88d7-3fcfa3140365",
-            "actions": [
-                {
-                    "name": "New action",
-                    "type": "Button",
-                    "id": "007862f2-cdaa-4dc7-86af-7b42c3f9d40b",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                }
-            ],
-            "bindings": [
-                {
-                    "name": "",
-                    "id": "ec0f9e73-6c8d-4585-bb88-49a26ff5059d",
+                    "id": "67e14c76-4401-45c2-b568-fafc79cea1fd",
                     "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "New action",
+                    "action": "Flipper Right",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "38508513-e6b2-45c9-b09a-412cf7d93d73",
+                    "id": "d39417b9-0187-425f-8792-1bfe96ec5cae",
                     "path": "<Keyboard>/rightArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "New action",
+                    "action": "Flipper Right",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "f0662c71-d056-4962-bbea-a06514aad812",
+                    "id": "630322e1-f84e-444b-bc17-3bd7c0fdd2ff",
                     "path": "<Keyboard>/rightShift",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "New action",
+                    "action": "Flipper Right",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "1f8238b8-651f-4ee2-b175-3586ea3ed88f",
+                    "id": "0c2b8eac-fe17-4418-af28-2e91ca2b1645",
                     "path": "<Keyboard>/rightCtrl",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "New action",
+                    "action": "Flipper Right",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5ccc7f7a-99d1-4039-b586-8873b1e1064e",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Flipper Left",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "37b1edf1-2e77-4c85-a13e-7c2ffb6999d3",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Flipper Left",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "36f5e76f-5492-48ca-a9a7-d66692ea96ad",
+                    "path": "<Keyboard>/leftCtrl",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Flipper Left",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8e38b827-c3fd-4db9-a6ee-6fe35755e79c",
+                    "path": "<Keyboard>/leftShift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Flipper Left",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5d0f96a1-791e-4760-b163-bcc5fc0de4b0",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Ball Shooter",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
