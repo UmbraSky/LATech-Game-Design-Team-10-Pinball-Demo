@@ -28,6 +28,7 @@ public class Ball : MonoBehaviour
     void Update()
     {
         if (controls.Testing.BallShooter.WasReleasedThisFrame()){
+            print("ball");
             Shooter();
         }
     }
