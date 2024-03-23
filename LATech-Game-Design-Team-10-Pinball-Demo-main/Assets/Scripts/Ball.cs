@@ -6,6 +6,7 @@ public class Ball : MonoBehaviour
 
 
 { public Controls controls;
+    private bool readyToLaunch = true;
     public float launchForce;
     public Ball ball;
     private Rigidbody rb;
@@ -24,12 +25,33 @@ public class Ball : MonoBehaviour
         rb.AddForce(Vector3.forward * actualLaunchForce, ForceMode.Impulse);
     }
 
+    public void Death()
+    {
+        transform.position = GameObject.FindGameObjectWithTag(Constants.Tags.RESTART).transform.position;
+        rb.velocity = Vector3.zero;
+        readyToLaunch = true;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag(Constants.Tags.DEATH)){
+            Death();
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision) {
+        var bumper = collision.gameObject.GetComponent<Bumpers>();
+        if (bumper != null) {
+            bumper.Bump();
+        }
+    }
     // Update is called once per frame
     void Update()
     {
-        if (controls.Testing.BallShooter.WasReleasedThisFrame()){
-            print("ball");
+        if (controls.Testing.BallShooter.WasReleasedThisFrame() && readyToLaunch == true){
             Shooter();
+            readyToLaunch = false;
         }
-    }
+
+    }  
 }

@@ -17,12 +17,12 @@ public class Flippers : MonoBehaviour
 
     public void FlipLeft()
     {
-        print("Flip Left");
+        // add stuff here
     }
 
     public void FlipRight()
     {
-        print("Flip Right");
+        // add stuff here
     }
 
     // Update is called once per frame
