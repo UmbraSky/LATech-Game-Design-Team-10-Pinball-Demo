@@ -5,24 +5,29 @@ using UnityEngine;
 public class Flippers : MonoBehaviour
 {
     public Controls controls;
-
+    public float flipperForce = 100f; 
+    private HingeJoint hingeJoint;
 
     // Start is called before the first frame update
     void Start()
     {
-        controls = new();
+        controls = new Controls();
         controls.Enable();
+        hingeJoint = GetComponent<HingeJoint>();
     }
 
-
     public void FlipLeft()
-    {
-        // add stuff here
+    {       
+        JointSpring spring = hingeJoint.spring;
+        spring.targetPosition = -45f; 
+        hingeJoint.spring = spring;
     }
 
     public void FlipRight()
     {
-        // add stuff here
+        JointSpring spring = hingeJoint.spring;
+        spring.targetPosition = 45f; 
+        hingeJoint.spring = spring;
     }
 
     // Update is called once per frame
@@ -30,10 +35,12 @@ public class Flippers : MonoBehaviour
     {
         if (controls.Testing.FlipperLeft.WasPressedThisFrame())
         {
+            Debug.Log("Left flipper pressed");
             FlipLeft();
         }
         else if (controls.Testing.FlipperRight.WasPressedThisFrame())
         {
+            Debug.Log("Right flipper pressed");
             FlipRight();
         }
     }
