@@ -5,35 +5,37 @@ using UnityEngine;
 public class Bumpers : MonoBehaviour
 {
     /// private fields
-    private Renderer ren;
-    private float t;
-    private readonly Color ColorHit = Color.green;
-    private readonly Color ColorDefault = Color.white;
+    private Renderer render;
+    Color lerpedColor;
+    Color defaultColor = Color.green;
+    // private bool bumped;
 
     // Life Cycle methods
     private void Start() {
-        ren = GetComponent<Renderer>();
-        t = 0;
+        render = GetComponent<Renderer>();
+        // bumped = false;
     }
     private void Update() {
-        // transition color back to default after being hit
-        if (t > 0) {
-            Color color = Color.Lerp(ColorDefault, ColorHit, t);
-            ren.material.SetColor("_BaseColor", color);
-            // the divided by 2 just slows it down some
-            t -= Time.deltaTime / 2.0f;
-            if (t < 0) {
-                t = 0;
-            }
-        }
+        // if (bumped == false) {
+        lerpedColor = Color.Lerp(Color.black, Color.red, Mathf.PingPong(Time.time, 1.5f));
+        render.material.color = lerpedColor;
+        // }
+        // else if (bumped == true) {
+        //     render.material.color = defaultColor;
+        // }
     }
+    
 
     // Other methods
     public void Bump() {
-        // change to hit color
-        ren.material.SetColor("_BaseColor", ColorHit);
-
-        // allow Update method to transition it slowly back to default color
-        t = 1;
+        // if (bumped == false){
+        // bumped = true;
+        print("Bump!");
+        // }
     }
+
+    // public void resetBump() {
+    //     bumped = false;
+    //     print("Not bumped.");
+    // }
 }
