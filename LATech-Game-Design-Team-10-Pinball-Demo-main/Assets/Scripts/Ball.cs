@@ -17,6 +17,10 @@ public class Ball : MonoBehaviour
     public int ballLives;
     public int gameScore;
     public int recordScore;
+    public AudioSource bumperBump;
+    public AudioSource ballDrop;
+    public AudioSource ballShot;
+    public AudioSource circlePress;
 
     // Start is called before the first frame update
     void Start()
@@ -38,6 +42,7 @@ public class Ball : MonoBehaviour
     {
         float actualLaunchForce = Random.Range(launchForce * 0.8f, launchForce * 1.2f);
         rb.AddForce(Vector3.forward * actualLaunchForce, ForceMode.Impulse);
+        ballShot.Play();
         StartCoroutine(ShowObjectAfterDelay());
     }
 
@@ -56,6 +61,7 @@ public class Ball : MonoBehaviour
         rb.velocity = Vector3.zero;
         readyToLaunch = true;
         ballLives--;
+        ballDrop.Play();
         scoreAmount(Constants.Points.UPDATE);
         if (objectToAppear != null)
         {
@@ -75,6 +81,7 @@ public class Ball : MonoBehaviour
         else if (other.CompareTag(Constants.Tags.SCORECIRCLE)){
             var sCircle = other.GetComponent<ScoreCircles>();
             sCircle.Press();  
+            circlePress.Play();
             scoreAmount(Constants.Points.PRESS);     
             pressedCount++; 
             if (pressedCount == 3){
@@ -88,6 +95,7 @@ public class Ball : MonoBehaviour
         var bumper = collision.gameObject.GetComponent<Bumpers>();
         if (bumper != null) {
             bumper.Bump();
+            bumperBump.Play();
             scoreAmount(Constants.Points.BUMP);
         }
     }
