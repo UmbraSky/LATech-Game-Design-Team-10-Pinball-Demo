@@ -5,43 +5,43 @@ using UnityEngine;
 public class Flippers : MonoBehaviour
 {
     public Controls controls;
-    public float flipperForce = 100f; 
-    private HingeJoint hingeJoint;
+    public Rigidbody leftFlipperRigidbody; 
+    public Rigidbody rightFlipperRigidbody; 
 
-    // Start is called before the first frame update
+    // Adjust forces here
+    public float flipperForce = 10f; 
+    public float returnForce = 20f;
+
     void Start()
     {
         controls = new Controls();
         controls.Enable();
-        hingeJoint = GetComponent<HingeJoint>();
     }
 
-    public void FlipLeft()
-    {       
-        JointSpring spring = hingeJoint.spring;
-        spring.targetPosition = -45f; 
-        hingeJoint.spring = spring;
-    }
-
-    public void FlipRight()
-    {
-        JointSpring spring = hingeJoint.spring;
-        spring.targetPosition = 45f; 
-        hingeJoint.spring = spring;
-    }
-
-    // Update is called once per frame
     void Update()
     {
         if (controls.Testing.FlipperLeft.WasPressedThisFrame())
-        {
-            Debug.Log("Left flipper pressed");
-            FlipLeft();
+        {         
+            Flip(leftFlipperRigidbody, transform.forward); 
         }
         else if (controls.Testing.FlipperRight.WasPressedThisFrame())
-        {
-            Debug.Log("Right flipper pressed");
-            FlipRight();
+        {          
+            Flip(rightFlipperRigidbody, transform.forward);       
         }
+    }
+
+    // Flip paddle, disable control, spring paddle back, enable control
+    void Flip(Rigidbody flipperRigidbody, Vector3 forceDirection)
+    {
+        flipperRigidbody.AddForce(forceDirection * flipperForce, ForceMode.Impulse);
+        controls.Disable();
+        EnableSpring(flipperRigidbody.GetComponent<HingeJoint>());
+    }
+
+    void EnableSpring(HingeJoint hingeJoint)
+    {
+        hingeJoint.useSpring = true;
+        hingeJoint.spring = new JointSpring { spring = returnForce };
+        controls.Enable();
     }
 }
