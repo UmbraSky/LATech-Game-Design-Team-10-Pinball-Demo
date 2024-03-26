@@ -11,7 +11,7 @@ public class Ball : MonoBehaviour
     public Ball ball;
     private Rigidbody rb;
     public float speed = 10;
-    // public int numberBumped = 2;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -44,7 +44,6 @@ public class Ball : MonoBehaviour
         var bumper = collision.gameObject.GetComponent<Bumpers>();
         if (bumper != null) {
             bumper.Bump();
-            // numberBumped++;
         }
     }
     // Update is called once per frame
@@ -54,9 +53,5 @@ public class Ball : MonoBehaviour
             Shooter();
             readyToLaunch = false;
         }
-        // if (numberBumped == 4) {
-        //         gameObject.GetComponent<Bumpers>().resetBump();
-        //         numberBumped = 0;
-        //     }
     }  
 }

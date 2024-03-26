@@ -4,38 +4,24 @@ using UnityEngine;
 
 public class Bumpers : MonoBehaviour
 {
+    [SerializeField] ParticleSystem BumpParticles = null;
     /// private fields
     private Renderer render;
     Color lerpedColor;
-    Color defaultColor = Color.green;
-    // private bool bumped;
 
     // Life Cycle methods
     private void Start() {
         render = GetComponent<Renderer>();
-        // bumped = false;
     }
     private void Update() {
-        // if (bumped == false) {
         lerpedColor = Color.Lerp(Color.black, Color.red, Mathf.PingPong(Time.time, 1.5f));
         render.material.color = lerpedColor;
-        // }
-        // else if (bumped == true) {
-        //     render.material.color = defaultColor;
-        // }
     }
     
 
     // Other methods
     public void Bump() {
-        // if (bumped == false){
-        // bumped = true;
+        BumpParticles.Play();
         print("Bump!");
-        // }
     }
-
-    // public void resetBump() {
-    //     bumped = false;
-    //     print("Not bumped.");
-    // }
 }
