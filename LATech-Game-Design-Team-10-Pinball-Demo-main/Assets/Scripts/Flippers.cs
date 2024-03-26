@@ -5,8 +5,9 @@ using UnityEngine;
 public class Flippers : MonoBehaviour
 {
     public Controls controls;
-    public Rigidbody leftFlipperRigidbody; 
-    public Rigidbody rightFlipperRigidbody; 
+    public Rigidbody leftFlipperRigidbody;
+    public Rigidbody leftSecondFlipperRigidbody;
+    public Rigidbody rightFlipperRigidbody;
 
     // Adjust forces here
     public float flipperForce = 10f; 
@@ -22,7 +23,8 @@ public class Flippers : MonoBehaviour
     {
         if (controls.Testing.FlipperLeft.WasPressedThisFrame())
         {         
-            Flip(leftFlipperRigidbody, transform.forward); 
+            Flip(leftFlipperRigidbody, transform.forward);
+            Flip(leftSecondFlipperRigidbody, transform.forward);
         }
         else if (controls.Testing.FlipperRight.WasPressedThisFrame())
         {          
