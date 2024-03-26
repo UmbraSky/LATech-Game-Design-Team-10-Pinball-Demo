@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Death
   - Restart
+  - ScoreCircle
   layers:
   - Default
   - TransparentFX
