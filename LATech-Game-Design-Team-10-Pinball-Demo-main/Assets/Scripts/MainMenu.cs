@@ -5,9 +5,9 @@ using UnityEngine.InputSystem;
 
 public class MainMenu : MonoBehaviour
 {
+    /*
     public Canvas mainMenuCanvas; 
     public InputAction controls;
-    private bool controlsEnabled = false;
 
     // Start is called before the first frame update
     void Start()
@@ -20,13 +20,11 @@ public class MainMenu : MonoBehaviour
     void Update()
     {
         // Feed start button
-        /*
-        if (controls.ReadValue<float>("StartButton") > 0 && !controlsEnabled)
+        if (GameObject.StartButton is pressed)
         {
             controls.Enable();
-            controlsEnabled = true;
             mainMenuCanvas.enabled = false;
         }
-        */
     }
+    */
 }
