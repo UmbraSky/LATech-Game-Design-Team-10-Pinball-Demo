@@ -22,6 +22,5 @@ public class Bumpers : MonoBehaviour
     // Other methods
     public void Bump() {
         BumpParticles.Play();
-        print("Bump!");
     }
 }

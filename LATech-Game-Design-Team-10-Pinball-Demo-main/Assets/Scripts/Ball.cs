@@ -13,6 +13,7 @@ public class Ball : MonoBehaviour
     public float speed = 10;
     public GameObject objectToAppear; 
     public float appearanceDelay = 1.5f;
+    public int pressedCount;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +22,7 @@ public class Ball : MonoBehaviour
         controls = new();
         controls.Enable();
         objectToAppear.SetActive(false);
+        pressedCount = 0;
     }
 
     public void Shooter()
@@ -54,6 +56,11 @@ public class Ball : MonoBehaviour
     {
         if (other.CompareTag(Constants.Tags.DEATH)){
             Death();
+        }
+        else if (other.CompareTag(Constants.Tags.SCORECIRCLE)){
+            var sCircle = other.GetComponent<ScoreCircles>();
+            sCircle.Press();  
+            pressedCount++;      
         }
     }
 
