@@ -10,6 +10,12 @@ public class Constants : MonoBehaviour
         public const string SCORECIRCLE = "ScoreCircle";
     }
     public static class PlayerPrefs {
-        public const string HIGHSCORE = "highscore";
+        public const string RECORDSCORE = "RecordScore";
+    }
+    public static class Points {
+        public const int BUMP = 500;
+        public const int PRESS = 300;
+        public const int UNLOCK = 5000;
+        public const int UPDATE = 0;
     }
 }

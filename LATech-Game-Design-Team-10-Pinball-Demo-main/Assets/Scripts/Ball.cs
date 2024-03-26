@@ -14,6 +14,9 @@ public class Ball : MonoBehaviour
     public GameObject objectToAppear; 
     public float appearanceDelay = 1.5f;
     public int pressedCount;
+    public int ballLives;
+    public int gameScore;
+    public int recordScore;
 
     // Start is called before the first frame update
     void Start()
@@ -23,8 +26,14 @@ public class Ball : MonoBehaviour
         controls.Enable();
         objectToAppear.SetActive(false);
         pressedCount = 0;
+        ballLives = 5;
+        gameScore = 0;
     }
 
+    private void OnDisable() 
+    {
+        PlayerPrefs.SetInt(Constants.PlayerPrefs.RECORDSCORE, recordScore);
+    }
     public void Shooter()
     {
         float actualLaunchForce = Random.Range(launchForce * 0.8f, launchForce * 1.2f);
@@ -46,9 +55,15 @@ public class Ball : MonoBehaviour
         transform.position = GameObject.FindGameObjectWithTag(Constants.Tags.RESTART).transform.position;
         rb.velocity = Vector3.zero;
         readyToLaunch = true;
+        ballLives--;
+        scoreAmount(Constants.Points.UPDATE);
         if (objectToAppear != null)
         {
             objectToAppear.SetActive(false);
+        }
+        if (ballLives < 0){
+            // replace with Game Over
+            print("You are dead, bucko");
         }
     }
 
@@ -60,7 +75,12 @@ public class Ball : MonoBehaviour
         else if (other.CompareTag(Constants.Tags.SCORECIRCLE)){
             var sCircle = other.GetComponent<ScoreCircles>();
             sCircle.Press();  
-            pressedCount++;      
+            scoreAmount(Constants.Points.PRESS);     
+            pressedCount++; 
+            if (pressedCount == 3){
+                scoreAmount(Constants.Points.UNLOCK);
+                print("UNLOCK JACKPOT!");
+            }     
         }
     }
 
@@ -68,6 +88,15 @@ public class Ball : MonoBehaviour
         var bumper = collision.gameObject.GetComponent<Bumpers>();
         if (bumper != null) {
             bumper.Bump();
+            scoreAmount(Constants.Points.BUMP);
+        }
+    }
+
+    public void scoreAmount(int amount)
+    {
+        gameScore += amount;
+        if (gameScore > recordScore) {
+            recordScore = gameScore;
         }
     }
     // Update is called once per frame
@@ -77,5 +106,6 @@ public class Ball : MonoBehaviour
             Shooter();
             readyToLaunch = false;
         }
+        else {gameScore++;}
     }  
 }
