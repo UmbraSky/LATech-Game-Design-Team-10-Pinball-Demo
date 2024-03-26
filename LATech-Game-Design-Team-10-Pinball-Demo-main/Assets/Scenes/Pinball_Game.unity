@@ -641,8 +641,8 @@ MonoBehaviour:
   leftFlipperRigidbody: {fileID: 2076509082}
   leftSecondFlipperRigidbody: {fileID: 1354259634}
   rightFlipperRigidbody: {fileID: 1826346402}
-  flipperForce: 5
-  returnForce: 15
+  flipperForce: 3
+  returnForce: 10
 --- !u!43 &320624096
 Mesh:
   m_ObjectHideFlags: 0
@@ -25180,7 +25180,7 @@ Transform:
   m_GameObject: {fileID: 1771216360}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.15, y: 6.466, z: -10.293}
+  m_LocalPosition: {x: 8.9, y: 6.5, z: -10.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

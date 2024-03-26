@@ -10,8 +10,8 @@ public class Flippers : MonoBehaviour
     public Rigidbody rightFlipperRigidbody;
 
     // Adjust forces here
-    public float flipperForce = 10f; 
-    public float returnForce = 20f;
+    public float flipperForce = 3f; 
+    public float returnForce = 10f;
 
     void Start()
     {
