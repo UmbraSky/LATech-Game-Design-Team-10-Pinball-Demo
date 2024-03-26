@@ -7,8 +7,6 @@ public class Constants : MonoBehaviour
     public static class Tags {
         public const string RESTART = "Restart";
         public const string DEATH = "Death";
-        public const string SCORECIRCLE = "ScoreCircle";
-
     }
     public static class PlayerPrefs {
         public const string HIGHSCORE = "highscore";
