@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class IgnoreCollisionWithObject : MonoBehaviour
 {
-    public GameObject objectToIgnore; // Reference to the GameObject to ignore collision with
+    // Reference to the GameObject to ignore collision with
+    public GameObject objectToIgnore; 
 
     void Start()
     {
@@ -14,7 +15,7 @@ public class IgnoreCollisionWithObject : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("Please assign a GameObject to ignore collision with.");
+            Debug.LogWarning("Need an Object to Ignore, Assign one, LOL.");
         }
     }
 
@@ -29,7 +30,7 @@ public class IgnoreCollisionWithObject : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("One or both GameObjects do not have Collider components.");
+            Debug.LogWarning("You need to add some collider elements, sillygoose.");
         }
     }
 }
